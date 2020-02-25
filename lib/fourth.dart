@@ -59,7 +59,8 @@ class _FourthPageState extends State<FourthPage> {
   }
 
   _popUntilSecond() {
-    // TODO: Implement pop until second page
+    // Implement pop until second page
     // TODO: Send data captured through text field to second page
+    Navigator.popUntil(context, (route) => route.settings.name == 'SecondPage');
   }
 }
