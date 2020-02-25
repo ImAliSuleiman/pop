@@ -53,8 +53,13 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   _gotoSecond() {
-    // TODO: Define route settings to identify the page pushed to navigator stack
+    // Define route settings to identify the page pushed to navigator stack
+    var secondPage = SecondPage();
+    var pageSettings =
+        RouteSettings(name: secondPage.toStringShort(), arguments: Map());
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => SecondPage()));
+        context,
+        MaterialPageRoute(
+            builder: (context) => secondPage, settings: pageSettings));
   }
 }
