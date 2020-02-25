@@ -45,8 +45,13 @@ class _SecondPageState extends State<SecondPage> {
   }
 
   _gotoThird() {
-    // TODO: Capture data sent from forth page
+    // Capture data sent from fourth page
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => ThirdPage()));
+            context, MaterialPageRoute(builder: (context) => ThirdPage()))
+        .then((_) {
+      var args = ModalRoute.of(context).settings.arguments as Map;
+      if (args != null && args['data'] != null)
+        setState(() => _result = args['data']);
+    });
   }
 }
